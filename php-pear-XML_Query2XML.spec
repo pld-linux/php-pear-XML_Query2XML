@@ -9,6 +9,7 @@ Summary(pl):	%{_pearname} - Tworzenie danych XML na podstawie zapytañ SQL
 Name:		php-pear-%{_pearname}
 Version:	0.6.0
 Release:	1
+Epoch:		0
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
@@ -44,11 +45,11 @@ Major features:
 In PEAR status of this package is: %{_status}.
 
 %description -l pl
-XML_Query2XML powzwala na przetworzenie rekordów uzyskanych z jednego
-lub wiêcej zapytañ SQL SELECT w dane XML. Wspierane s± ró¿ne rodzaje
-transformacji - od prostych do bardzo z³o¿onyc. Pakiet zosta³ napisany
-z my¶l± o wydajno¶ci - mo¿e obs³u¿yæ du¿e ilo¶ci danych. XSLT nie jest
-potrzebne!
+XML_Query2XML pozwala na przetworzenie rekordów uzyskanych z jednego
+lub wiêcej zapytañ SQL SELECT na dane XML. Wspierane s± ró¿ne rodzaje
+transformacji - od prostych do bardzo z³o¿onych. Pakiet zosta³
+napisany z my¶l± o wydajno¶ci - mo¿e obs³u¿yæ du¿e ilo¶ci danych. XSLT
+nie jest potrzebne!
 
 G³ówne cechy:
 - XML_Query2XML wspó³pracuje z klasami dostarczonymi przez
@@ -59,7 +60,7 @@ G³ówne cechy:
   nazw XML,
 - wspó³pracuje z bazami danych wspieranymi przez PEAR DB lub PEAR
   MDB2,
-- mo¿liwo¶æ 'odpluskiwania' i logowania,
+- mo¿liwo¶æ 'odpluskwiania' i logowania,
 - dostarcza mo¿liwo¶æ profilowania,
 - rozbudowana dokumentacja: przewodnik oraz opis API,
 - osiem studiów przypadku: od prostych do bardzo z³o¿onych
@@ -103,8 +104,9 @@ fi
 %doc docs/%{_pearname}/*
 %{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/XML/Query2XML.php
+%dir %{php_pear_dir}/XML/Query2XML
 %{php_pear_dir}/XML/Query2XML/ISO9075Mapper.php
 
 %files tests
 %defattr(644,root,root,755)
-%{php_pear_dir}/tests/XML_Query2XML/tests/*
+%{php_pear_dir}/tests/XML_Query2XML
