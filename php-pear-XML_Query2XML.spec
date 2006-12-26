@@ -1,19 +1,19 @@
 %include	/usr/lib/rpm/macros.php
 %define		_class		XML
 %define		_subclass	Query2XML
-%define		_status		beta
+%define		_status		stable
 %define		_pearname	XML_Query2XML
 
 Summary:	%{_pearname} - Creates XML data from SQL queries
 Summary(pl):	%{_pearname} - Tworzenie danych XML na podstawie zapytañ SQL
 Name:		php-pear-%{_pearname}
-Version:	0.6.0
+Version:	1.0.0
 Release:	1
 Epoch:		0
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	92e2ce590f9ba3bc832a6bcffe8d5c52
+# Source0-md5:	d5a1c8140b232aaa7405322c5848897b
 URL:		http://pear.php.net/package/XML_Query2XML/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
