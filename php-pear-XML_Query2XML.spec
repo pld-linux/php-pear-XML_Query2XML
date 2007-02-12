@@ -5,7 +5,7 @@
 %define		_pearname	XML_Query2XML
 
 Summary:	%{_pearname} - Creates XML data from SQL queries
-Summary(pl):	%{_pearname} - Tworzenie danych XML na podstawie zapytaÒ SQL
+Summary(pl.UTF-8):   %{_pearname} - Tworzenie danych XML na podstawie zapyta≈Ñ SQL
 Name:		php-pear-%{_pearname}
 Version:	1.0.0
 Release:	1
@@ -45,34 +45,34 @@ Major features:
 
 In PEAR status of this package is: %{_status}.
 
-%description -l pl
-XML_Query2XML pozwala na przetworzenie rekordÛw uzyskanych z jednego
-lub wiÍcej zapytaÒ SQL SELECT na dane XML. Wspierane s± rÛøne rodzaje
-transformacji - od prostych do bardzo z≥oøonych. Pakiet zosta≥
-napisany z my∂l± o wydajno∂ci - moøe obs≥uøyÊ duøe ilo∂ci danych. XSLT
+%description -l pl.UTF-8
+XML_Query2XML pozwala na przetworzenie rekord√≥w uzyskanych z jednego
+lub wiƒôcej zapyta≈Ñ SQL SELECT na dane XML. Wspierane sƒÖ r√≥≈ºne rodzaje
+transformacji - od prostych do bardzo z≈Ço≈ºonych. Pakiet zosta≈Ç
+napisany z my≈õlƒÖ o wydajno≈õci - mo≈ºe obs≈Çu≈ºyƒá du≈ºe ilo≈õci danych. XSLT
 nie jest potrzebne!
 
-G≥Ûwne cechy:
-- XML_Query2XML wspÛ≥pracuje z klasami dostarczonymi przez
+G≈Ç√≥wne cechy:
+- XML_Query2XML wsp√≥≈Çpracuje z klasami dostarczonymi przez
   rozszerzenie DOM XML PHP5,
-- do prostych zadaÒ potrzebny jest minimalny nak≥ad si≥,
-- wysoce konfigurowalny dla z≥oøonych zadaÒ,
-- wsparcie dla ISO/IEC 9075-14:2005: mapowanie identyfikatorÛw SQL do
+- do prostych zada≈Ñ potrzebny jest minimalny nak≈Çad si≈Ç,
+- wysoce konfigurowalny dla z≈Ço≈ºonych zada≈Ñ,
+- wsparcie dla ISO/IEC 9075-14:2005: mapowanie identyfikator√≥w SQL do
   nazw XML,
-- wspÛ≥pracuje z bazami danych wspieranymi przez PEAR DB lub PEAR
+- wsp√≥≈Çpracuje z bazami danych wspieranymi przez PEAR DB lub PEAR
   MDB2,
-- moøliwo∂Ê 'odpluskwiania' i logowania,
-- dostarcza moøliwo∂Ê profilowania,
+- mo≈ºliwo≈õƒá 'odpluskwiania' i logowania,
+- dostarcza mo≈ºliwo≈õƒá profilowania,
 - rozbudowana dokumentacja: przewodnik oraz opis API,
-- osiem studiÛw przypadku: od prostych do bardzo z≥oøonych
+- osiem studi√≥w przypadku: od prostych do bardzo z≈Ço≈ºonych
   scenariuszy,
-- 168 testÛw dla PHPUnit2.
+- 168 test√≥w dla PHPUnit2.
 
 Ta klasa ma w PEAR status: %{_status}.
 
 %package tests
 Summary:	Tests for PEAR::%{_pearname}
-Summary(pl):	Testy dla PEAR::%{_pearname}
+Summary(pl.UTF-8):   Testy dla PEAR::%{_pearname}
 Group:		Development
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 AutoReq:	no
@@ -80,7 +80,7 @@ AutoReq:	no
 %description tests
 Tests for PEAR::%{_pearname}.
 
-%description tests -l pl
+%description tests -l pl.UTF-8
 Testy dla PEAR::%{_pearname}.
 
 %prep
