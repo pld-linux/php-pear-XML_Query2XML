@@ -7,13 +7,13 @@
 Summary:	%{_pearname} - Creates XML data from SQL queries
 Summary(pl.UTF-8):	%{_pearname} - Tworzenie danych XML na podstawie zapytań SQL
 Name:		php-pear-%{_pearname}
-Version:	1.0.0
+Version:	1.1.0
 Release:	1
 Epoch:		0
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	d5a1c8140b232aaa7405322c5848897b
+# Source0-md5:	82811224b5c427242a233e7a621e51d8
 URL:		http://pear.php.net/package/XML_Query2XML/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -22,6 +22,9 @@ Requires:	php-common >= 3:5.0.0
 Requires:	php-pear
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+# exclude optional dependencies
+%define		_noautoreq	'pear(DB.*)' 'pear(MDB2.*)' 'pear(I18N/UnicodeString.*)'
 
 %description
 XML_Query2XML allows you to transform the records retrieved with one
@@ -106,6 +109,7 @@ fi
 %{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/XML/Query2XML.php
 %dir %{php_pear_dir}/XML/Query2XML
+%{php_pear_dir}/XML/Query2XML/Callback.php
 %{php_pear_dir}/XML/Query2XML/ISO9075Mapper.php
 
 %files tests
