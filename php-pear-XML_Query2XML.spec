@@ -7,13 +7,13 @@
 Summary:	%{_pearname} - Creates XML data from SQL queries
 Summary(pl.UTF-8):	%{_pearname} - Tworzenie danych XML na podstawie zapytań SQL
 Name:		php-pear-%{_pearname}
-Version:	1.1.0
+Version:	1.2.1
 Release:	1
 Epoch:		0
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	82811224b5c427242a233e7a621e51d8
+# Source0-md5:	1cc87cb2beb693e3d92adca993a0e00b
 URL:		http://pear.php.net/package/XML_Query2XML/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
