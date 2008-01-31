@@ -8,7 +8,7 @@ Summary:	%{_pearname} - Creates XML data from SQL queries
 Summary(pl.UTF-8):	%{_pearname} - Tworzenie danych XML na podstawie zapytań SQL
 Name:		php-pear-%{_pearname}
 Version:	1.4.0
-Release:	1
+Release:	2
 Epoch:		0
 License:	LGPL
 Group:		Development/Languages/PHP
