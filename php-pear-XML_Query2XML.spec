@@ -1,15 +1,11 @@
 %include	/usr/lib/rpm/macros.php
-%define		_class		XML
-%define		_subclass	Query2XML
 %define		_status		stable
 %define		_pearname	XML_Query2XML
-
 Summary:	%{_pearname} - Creates XML data from SQL queries
 Summary(pl.UTF-8):	%{_pearname} - Tworzenie danych XML na podstawie zapytań SQL
 Name:		php-pear-%{_pearname}
 Version:	1.7.1
-Release:	1
-Epoch:		0
+Release:	2
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
@@ -20,11 +16,14 @@ BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	php-common >= 3:5.0.0
 Requires:	php-pear
+Suggests:	php-pear-I18N_UnicodeString
+Suggests:	php-pear-MDB2
+Suggests:	php-pear-Net_LDAP2
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # exclude optional dependencies
-%define		_noautoreq	'pear(DB.*)' 'pear(MDB2.*)' 'pear(I18N/UnicodeString.*)'
+%define		_noautoreq	'pear(DB.*)' 'pear(MDB2.*)' 'pear(I18N/UnicodeString.*)' pear(Net/LDAP2.*)
 
 %description
 XML_Query2XML allows you to transform the records retrieved with one
@@ -77,7 +76,7 @@ Ta klasa ma w PEAR status: %{_status}.
 Summary:	Tests for PEAR::%{_pearname}
 Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
 Group:		Development
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 AutoReq:	no
 
 %description tests
