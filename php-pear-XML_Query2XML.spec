@@ -1,19 +1,19 @@
-%include	/usr/lib/rpm/macros.php
 %define		_status		stable
 %define		_pearname	XML_Query2XML
+%include	/usr/lib/rpm/macros.php
 Summary:	%{_pearname} - Creates XML data from SQL queries
 Summary(pl.UTF-8):	%{_pearname} - Tworzenie danych XML na podstawie zapytań SQL
 Name:		php-pear-%{_pearname}
-Version:	1.7.1
-Release:	3
+Version:	1.7.2
+Release:	1
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	0d669e5326401bcd257b3954500fd79d
+# Source0-md5:	c43ec15723a2e927d7fafbc4ac50cd5d
 URL:		http://pear.php.net/package/XML_Query2XML/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
-BuildRequires:	rpmbuild(macros) >= 1.300
+BuildRequires:	rpmbuild(macros) >= 1.593
 Requires:	php-common >= 3:5.0.0
 Requires:	php-pear
 Suggests:	php-pear-I18N_UnicodeString
@@ -24,7 +24,7 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # exclude optional dependencies
-%define		_noautoreq	'pear(DB.*)' 'pear(MDB2.*)' 'pear(I18N/UnicodeString.*)' pear(Net/LDAP2.*)
+%define		_noautoreq	pear(DB.*) pear(MDB2.*) pear(I18N/UnicodeString.*) pear(Net/LDAP2.*)
 
 %description
 XML_Query2XML allows you to transform the records retrieved with one
@@ -76,18 +76,21 @@ Ta klasa ma w PEAR status: %{_status}.
 %prep
 %pear_package_setup
 
+mv .%{php_pear_dir}/data/XML_Query2XML/tutorials/XML_Query2XML examples
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{php_pear_dir}
 %pear_package_install
 
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+cp -a examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-if [ -f %{_docdir}/%{name}-%{version}/optional-packages.txt ]; then
-	cat %{_docdir}/%{name}-%{version}/optional-packages.txt
-fi
+%post -p <lua>
+%pear_package_print_optionalpackages
 
 %files
 %defattr(644,root,root,755)
@@ -96,3 +99,4 @@ fi
 %{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/XML/Query2XML.php
 %{php_pear_dir}/XML/Query2XML
+%{_examplesdir}/%{name}-%{version}
