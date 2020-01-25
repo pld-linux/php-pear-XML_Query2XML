@@ -1,6 +1,5 @@
 %define		_status		stable
 %define		_pearname	XML_Query2XML
-%include	/usr/lib/rpm/macros.php
 Summary:	%{_pearname} - Creates XML data from SQL queries
 Summary(pl.UTF-8):	%{_pearname} - Tworzenie danych XML na podstawie zapytań SQL
 Name:		php-pear-%{_pearname}
